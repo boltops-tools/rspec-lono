@@ -1,0 +1,4 @@
+source "https://rubygems.org"
+
+gem "lono", path: "~/boltops-tools/lono" # '~> #{Lono::VERSION}'
+gem "rspec-lono", path: "~/boltops-tools/rspec-lono"

@@ -1,8 +1,25 @@
-# Rspec::Lono
+# rspec-lono
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rspec/lono`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![BoltOps Badge](https://img.boltops.com/boltops/badges/boltops-badge.png)](https://www.boltops.com)
 
-TODO: Delete this and the text above, and describe your gem
+Terraspec rspec helper methods. The usual testing process is:
+
+1. Build a test harness. The test harness is a generated lono project with the specified blueprint.
+2. Runs a `lono up` to create real resources.
+3. Check the resources. In many cases, check the CloudFormation resources and outputs.
+4. Runs a `lono down` to clean up the real resources.
+
+## Test harness location
+
+Where is the generated test harness located?
+
+The test hardness is materialized into `/tmp/lono/test-harnesses/NAME`.
+
+## Blueprint-Level and Project-Level Tests
+
+The test helpers support both blueprint-level and project-level tests. See:
+
+* [Lono Testing](https://lono.cloud/docs/testing/)
 
 ## Installation
 
@@ -15,25 +32,3 @@ gem 'rspec-lono'
 And then execute:
 
     $ bundle install
-
-Or install it yourself as:
-
-    $ gem install rspec-lono
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rspec-lono.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

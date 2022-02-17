@@ -1,0 +1,18 @@
+describe "<%= name %>" do
+  before(:all) do
+    harness.build # built at: /tmp/lono/test-harnesses/<%= name %>
+    lono.up
+  end
+  after(:all) do
+    lono.down
+  end
+
+  it "successful deploy" do
+    # Replace with your own test
+    expect(true).to be true
+    # Example
+    # pp lono.outputs
+    # output_value = lono.outputs["LogicalId"]
+    # expect(output_value).to include("demo-test-")
+  end
+end
