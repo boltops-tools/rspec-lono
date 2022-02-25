@@ -10,9 +10,10 @@ module RSpec::Lono
 
     def initialize(options={})
       @options = options
-      @options[:name] ||= detection.blueprint
-      @blueprint = Lono::Blueprint.new(@options)
-      @stack = Lono::Names.new(@options).stack
+      @options[:blueprint] ||= detection.blueprint
+      @options[:name] ||= @options[:blueprint]
+      @blueprint = Lono::Blueprint.new(@options) # uses @options[:name]
+      @stack = Lono::Names.new(@options).stack   # uses @options[:blueprint]
       @name = @blueprint.name
     end
 
